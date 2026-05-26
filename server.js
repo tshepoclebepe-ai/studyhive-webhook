@@ -89,6 +89,8 @@ If asked something unrelated to studying, politely redirect to homework help.`,
     if (!waRes.ok) {
       const err = await waRes.text();
       console.error('WhatsApp send error:', err);
+      console.error('PHONE_ID used:', PHONE_ID);
+      console.error('Token starts with:', WA_TOKEN ? WA_TOKEN.slice(0, 20) + '...' : 'MISSING');
     } else {
       console.log(`✅ Reply sent to ${from}`);
     }
